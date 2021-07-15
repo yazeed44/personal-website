@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-cv",
+  "name": "luca-previtali-dev",
   "private": true,
-  "description": "A simple starter to get up and developing your digital curriculum with GatsbyJS",
+  "description": "My simple website made in Gatsby forked from gatsby-starter-cv",
   "version": "0.0.1",
-  "author": "Francisco Santos <yoshi.df@gmail.com>",
+  "author": "Luca Previtali <lucaprevi@gmail.com>",
   "dependencies": {
     "@loadable/component": "5.12.0",
     "babel-plugin-styled-components": "1.10.6",
@@ -43,12 +43,5 @@
   "devDependencies": {
     "gh-pages": "2.2.0",
     "prettier": "1.19.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/santosfrancisco/gatsby-starter-cv"
-  },
-  "bugs": {
-    "url": "https://github.com/santosfrancisco/gatsby-starter-cv/issues"
   }
 }
