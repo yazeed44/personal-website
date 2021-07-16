@@ -1,11 +1,11 @@
-const config = require("./data/siteConfig");
+const config = require('./data/siteConfig')
 
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
     author: config.authorName,
-    ...config
+    ...config,
   },
   pathPrefix: config.pathPrefix,
   plugins: [
@@ -19,6 +19,7 @@ module.exports = {
         short_name: config.siteTitle,
         start_url: config.pathPrefix,
         background_color: config.background_color,
+        background_light: config.background_light,
         theme_color: config.theme_color,
         display: config.display,
         icon: config.icon,
@@ -30,7 +31,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          config.googleAnalyticsId // Google Analytics / GA
+          config.googleAnalyticsId, // Google Analytics / GA
         ],
       },
     },
