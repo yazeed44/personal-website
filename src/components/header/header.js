@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
-import { FiSun, FiMoon } from "react-icons/fi"
-import { withPrefix } from "gatsby"
+import { FiSun, FiMoon } from 'react-icons/fi'
+import { withPrefix } from 'gatsby'
 import Switch from 'react-switch'
 import siteConfig from '../../../data/siteConfig'
 
@@ -37,7 +37,7 @@ const HeaderNav = styled.nav`
 const HeaderLinkGroup = styled.div`
   display: flex;
   flex-direction: row;
-` 
+`
 
 const HeaderLink = styled(Link)`
   position: relative;
@@ -53,18 +53,19 @@ const HeaderLink = styled(Link)`
   padding-right: 20px;
   min-width: 42px;
   z-index: 10;
-  ${({ active }) => active && css`
-    pointer-events: none;
-    border-bottom: 2px solid #fff;
-  `}
+
+  ${props =>
+    props.$active &&
+    css`
+      pointer-events: none;
+      border-bottom: 2px solid #fff;
+    `}
 `
 
 const StyledSwitch = styled(Switch).attrs(props => ({
   onHandleColor: props.theme.colors.primary,
   offHandleColor: props.theme.colors.primary,
-}))`
-
-`
+}))``
 
 const SwitchWrapper = styled.div`
   display: flex;
@@ -88,7 +89,7 @@ const Header = ({ location, onChangeTheme, theme }) => {
         <HeaderLinkGroup>
           {headerLinks.map((headerLink, i) => (
             <HeaderLink
-              active={location.pathname === withPrefix(headerLink.url)}
+              $active={location === withPrefix(headerLink.url)}
               to={headerLink.url}
               key={`header-link-${i}`}
             >
@@ -96,16 +97,26 @@ const Header = ({ location, onChangeTheme, theme }) => {
             </HeaderLink>
           ))}
         </HeaderLinkGroup>
-        {siteConfig.enableDarkmode && <SwitchWrapper >
-          <StyledSwitch 
-            onChange={onChangeTheme} 
-            checked={theme === 'light'}
-            onColor="#626262"
-            offColor="#212121"
-            checkedIcon={<IconWrapper><FiSun color="yellow" /></IconWrapper>}
-            uncheckedIcon={<IconWrapper><FiMoon color="white" /></IconWrapper>}
-          />
-        </SwitchWrapper>}
+        {siteConfig.enableDarkmode && (
+          <SwitchWrapper>
+            <StyledSwitch
+              onChange={onChangeTheme}
+              checked={theme === 'light'}
+              onColor="#626262"
+              offColor="#212121"
+              checkedIcon={
+                <IconWrapper>
+                  <FiSun color="yellow" />
+                </IconWrapper>
+              }
+              uncheckedIcon={
+                <IconWrapper>
+                  <FiMoon color="white" />
+                </IconWrapper>
+              }
+            />
+          </SwitchWrapper>
+        )}
       </HeaderNav>
     </HeaderWrapper>
   )

@@ -90,7 +90,7 @@ module.exports = {
   siteUrl: 'https://lucaprevitali.dev',
   pathPrefix: '/luca-previtali-dev',
   siteCover: '/images/pexels-sergei-starostin-6636474.jpg',
-  googleAnalyticsId: 'UA-000000000-1',
+  googleAnalyticsId: 'UA-69742620-1',
   background_color: '#ffffff',
   background_light: '#fdfdfd',
   theme_color: '#25303B',

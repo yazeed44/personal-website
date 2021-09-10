@@ -37,7 +37,7 @@ const Portfolio = ({ className, location }) => {
   const title = 'Portfolio'
   const { keywords, portfolio } = siteConfig
   return (
-    <Layout location={location}>
+    <Layout location={location.pathname}>
       <SEO title={title} keywords={keywords} />
 
       <Hero

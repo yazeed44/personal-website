@@ -1,9 +1,9 @@
 {
   "name": "luca-previtali-dev",
-  "private": true,
+  "private": false,
   "description": "My simple website made in Gatsby forked from gatsby-starter-cv",
-  "version": "0.0.1",
-  "author": "Luca Previtali <lucaprevi@gmail.com>",
+  "version": "1.0.0",
+  "author": "Luca Previtali",
   "dependencies": {
     "@loadable/component": "5.12.0",
     "babel-plugin-styled-components": "1.10.6",
@@ -28,9 +28,6 @@
     "simple-json-fetch": "1.0.1",
     "styled-components": "5.1.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
