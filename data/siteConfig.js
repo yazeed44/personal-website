@@ -1,6 +1,7 @@
 module.exports = {
-  siteTitle: "Hi there 👋 I'm Luca",
-  siteDescription: `Luca Previtali website`,
+  siteTitle: 'Luca Previtali',
+  introText: "Hi there 👋 I'm Luca",
+  siteDescription: `Luca Previtali Website`,
   keyWords: [
     'luca previtali',
     'lucaprevitali',

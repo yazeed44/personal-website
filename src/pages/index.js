@@ -23,13 +23,21 @@ const Separator = styled.hr`
 `
 
 const Home = ({ className, location }) => {
-  const title = siteConfig.siteTitle
-  const { keywords } = siteConfig
+  const {
+    keywords,
+    siteTitle,
+    introText,
+    authorAvatar,
+    social,
+    siteCover,
+    authorDescription,
+    githubUsername,
+  } = siteConfig
   return (
     <Layout location={location.pathname}>
-      <SEO title={title} keywords={keywords} />
+      <SEO title={siteTitle} keywords={keywords} />
 
-      <Hero heroImg={siteConfig.siteCover} title={title} />
+      <Hero heroImg={siteCover} title={introText} />
 
       <Wrapper className={className}>
         <Container className="page-content" fluid>
@@ -37,44 +45,44 @@ const Home = ({ className, location }) => {
             <Col xs={4} className="avatar">
               <img
                 className="avatar__image"
-                src={withPrefix(siteConfig.authorAvatar)}
+                src={withPrefix(authorAvatar)}
                 alt="user avatar"
               />
               <div className="social">
-                {siteConfig.social.github && (
+                {social.github && (
                   <a
                     className="social-link github"
-                    href={siteConfig.social.github}
+                    href={social.github}
                     target="_blank"
                     rel="noreferrer"
                   >
                     <FaGithub className="social-icon" size="32" />
                   </a>
                 )}
-                {siteConfig.social.linkedin && (
+                {social.linkedin && (
                   <a
                     className="social-link linkedin"
-                    href={siteConfig.social.linkedin}
+                    href={social.linkedin}
                     target="_blank"
                     rel="noreferrer"
                   >
                     <FaLinkedin className="social-icon" size="32" />
                   </a>
                 )}
-                {siteConfig.social.twitter && (
+                {social.twitter && (
                   <a
                     className="social-link twitter"
-                    href={siteConfig.social.twitter}
+                    href={social.twitter}
                     target="_blank"
                     rel="noreferrer"
                   >
                     <FaTwitter className="social-icon" size="32" />
                   </a>
                 )}
-                {siteConfig.social.email && (
+                {social.email && (
                   <a
                     className="social-link email"
-                    href={`mailto:${siteConfig.social.email}`}
+                    href={`mailto:${social.email}`}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -86,13 +94,13 @@ const Home = ({ className, location }) => {
           </Row>
           <Row>
             <Col>
-              <About title="About" text={siteConfig.authorDescription} />
+              <About title="About" text={authorDescription} />
             </Col>
           </Row>
           <Separator />
           <Timeline />
           <Separator />
-          {siteConfig.githubUsername && <Repositories />}
+          {githubUsername && <Repositories />}
         </Container>
       </Wrapper>
     </Layout>
