@@ -14,7 +14,7 @@ module.exports = {
   twitterUsername: 'lucaprevi21',
   githubUsername: 'lucaprevitali',
   authorAvatar: '/images/avatar.jpeg',
-  authorDescription: `Passionate Javascript developer. I currently work as a frontend developer and mainly work with <strong>Typescript, Redux and React</strong>. Active <a href="https://stackoverflow.com/users/5572406/the-previ" target="_blank" rel="noreferrer">stackoverflow member</a>`,
+  authorDescription: `I'm a passionate Javascript developer. I currently work as a frontend developer and mainly work with <strong>Typescript, Redux and React</strong>. Active <a href="https://stackoverflow.com/users/5572406/the-previ" target="_blank" rel="noreferrer">stackoverflow member</a>`,
   jobs: [
     {
       company: 'Mikamai',
