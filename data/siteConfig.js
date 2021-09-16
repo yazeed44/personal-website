@@ -13,8 +13,9 @@ module.exports = {
   authorName: 'Luca Previtali',
   twitterUsername: 'lucaprevi21',
   githubUsername: 'lucaprevitali',
+  devtoUsername: 'lucaprevitali',
   authorAvatar: '/images/avatar.jpeg',
-  authorDescription: `I'm a passionate Javascript developer. I currently work as a frontend developer and mainly work with <strong>Typescript, Redux and React</strong>. Active <a href="https://stackoverflow.com/users/5572406/the-previ" target="_blank" rel="noreferrer">stackoverflow member</a>`,
+  authorDescription: `I'm a passionate Javascript developer. I currently work as a frontend developer and mainly work with <strong>Typescript, Redux and React</strong>. Sometimes I write <a href="https://dev.to/lucaprevitali" target="_blank">new articles on dev.to</a> and I like to help each other on <a href="https://stackoverflow.com/users/5572406/the-previ" target="_blank" rel="noreferrer">Stackoverflow</a>`,
   jobs: [
     {
       company: 'Mikamai',
@@ -83,9 +84,10 @@ module.exports = {
     },
   ],
   social: {
-    twitter: 'https://twitter.com/lucaprevi21',
-    linkedin: 'https://www.linkedin.com/in/previtaliluca/',
+    devto: 'https://dev.to/lucaprevitali',
     github: 'https://github.com/lucaprevitali',
+    linkedin: 'https://www.linkedin.com/in/previtaliluca/',
+    twitter: 'https://twitter.com/lucaprevi21',
     email: 'lucaprevi@gmail.com',
   },
   siteUrl: 'https://lucaprevitali.dev',

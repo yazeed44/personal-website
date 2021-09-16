@@ -1,7 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa'
+import {
+  FaDev,
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaTwitter,
+} from 'react-icons/fa'
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
@@ -12,6 +18,7 @@ import Wrapper from '../components/wrapper'
 import About from '../components/about'
 import Timeline from '../components/timeline'
 import Repositories from '../components/repositories'
+import Articles from '../components/articles'
 
 const Layout = loadable(() => import('../components/layout'))
 
@@ -32,6 +39,7 @@ const Home = ({ className, location }) => {
     siteCover,
     authorDescription,
     githubUsername,
+    devtoUsername,
   } = siteConfig
   return (
     <Layout location={location.pathname}>
@@ -49,6 +57,16 @@ const Home = ({ className, location }) => {
                 alt="user avatar"
               />
               <div className="social">
+                {social.devto && (
+                  <a
+                    className="social-link devto"
+                    href={social.devto}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaDev className="social-icon" size="32" />
+                  </a>
+                )}
                 {social.github && (
                   <a
                     className="social-link github"
@@ -101,6 +119,7 @@ const Home = ({ className, location }) => {
           <Timeline />
           <Separator />
           {githubUsername && <Repositories />}
+          {devtoUsername && <Articles />}
         </Container>
       </Wrapper>
     </Layout>

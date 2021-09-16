@@ -6,7 +6,7 @@ import siteConfig from '../../../data/siteConfig'
 
 import Loader from '../loader'
 
-const endpoint = `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&per_page=5&page=1`
+const endpoint = `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&sort=date&per_page=5&page=1`
 
 class Repositories extends React.Component {
   constructor(props) {
