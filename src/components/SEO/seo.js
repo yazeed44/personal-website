@@ -35,6 +35,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: `website`,
               },
               {
+                property: `og:image`,
+                content: 'https://media-exp1.licdn.com/dms/image/C5103AQFCxntzkQ8BfA/profile-displayphoto-shrink_200_200/0/1517611845797?e=1638403200&v=beta&t=ibfw05lC4YoHnCMIl-T15zaz7qCyfSkvMR1c7GQCzuw',
+              },
+              {
                 name: `twitter:card`,
                 content: `summary`,
               },
@@ -49,6 +53,10 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 name: `twitter:description`,
                 content: metaDescription,
+              },
+              {
+                property: `twitter:image`,
+                content: 'https://media-exp1.licdn.com/dms/image/C5103AQFCxntzkQ8BfA/profile-displayphoto-shrink_200_200/0/1517611845797?e=1638403200&v=beta&t=ibfw05lC4YoHnCMIl-T15zaz7qCyfSkvMR1c7GQCzuw',
               },
             ]
               .concat(
