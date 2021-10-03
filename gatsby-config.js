@@ -10,6 +10,7 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-open-graph-images`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

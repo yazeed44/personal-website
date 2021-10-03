@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: 'src/assets/site-screen.png',
+                content: 'https://lucaprevitali.dev/og-image/index.png',
               },
               {
                 name: `twitter:card`,
@@ -56,7 +56,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `twitter:image`,
-                content: 'src/assets/site-screen.png',
+                content: 'https://lucaprevitali.dev/og-image/index.png',
               },
             ]
               .concat(
