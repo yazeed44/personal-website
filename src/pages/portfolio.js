@@ -37,33 +37,34 @@ const Portfolio = ({ className, location }) => {
   const title = 'Portfolio'
   const { keywords, portfolio } = siteConfig
   return (
-    <Layout location={location.pathname}>
+    <>
       <SEO title={title} keywords={keywords} />
+      <Layout location={location.pathname}>
+        <Hero
+          heroImg={withPrefix('/images/pexels-jonas-svidras-785418.jpg')}
+          title={title}
+        />
 
-      <Hero
-        heroImg={withPrefix('/images/pexels-jonas-svidras-785418.jpg')}
-        title={title}
-      />
-
-      <Wrapper className={className}>
-        <Container className="page-content" fluid>
-          <Row>
-            {portfolio.map(job => (
-              <Col key={job.description} align="center">
-                <JobCard
-                  as={job.url ? 'a' : 'div'}
-                  href={job.url}
-                  target="_blank"
-                >
-                  <Image src={withPrefix(job.image)} />
-                  <p>{job.description}</p>
-                </JobCard>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </Wrapper>
-    </Layout>
+        <Wrapper className={className}>
+          <Container className="page-content" fluid>
+            <Row>
+              {portfolio.map(job => (
+                <Col key={job.description} align="center">
+                  <JobCard
+                    as={job.url ? 'a' : 'div'}
+                    href={job.url}
+                    target="_blank"
+                  >
+                    <Image src={withPrefix(job.image)} />
+                    <p>{job.description}</p>
+                  </JobCard>
+                </Col>
+              ))}
+            </Row>
+          </Container>
+        </Wrapper>
+      </Layout>
+    </>
   )
 }
 

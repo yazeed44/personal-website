@@ -42,87 +42,88 @@ const Home = ({ className, location }) => {
     devtoUsername,
   } = siteConfig
   return (
-    <Layout location={location.pathname}>
+    <>
       <SEO title={siteTitle} keywords={keywords} />
+      <Layout location={location.pathname}>
+        <Hero heroImg={siteCover} title={introText} />
 
-      <Hero heroImg={siteCover} title={introText} />
-
-      <Wrapper className={className}>
-        <Container className="page-content" fluid>
-          <Row>
-            <Col xs={4} className="avatar">
-              <img
-                className="avatar__image"
-                src={withPrefix(authorAvatar)}
-                alt="user avatar"
-              />
-              <div className="social">
-                {social.devto && (
-                  <a
-                    className="social-link devto"
-                    href={social.devto}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaDev className="social-icon" size="32" />
-                  </a>
-                )}
-                {social.github && (
-                  <a
-                    className="social-link github"
-                    href={social.github}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaGithub className="social-icon" size="32" />
-                  </a>
-                )}
-                {social.linkedin && (
-                  <a
-                    className="social-link linkedin"
-                    href={social.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaLinkedin className="social-icon" size="32" />
-                  </a>
-                )}
-                {social.twitter && (
-                  <a
-                    className="social-link twitter"
-                    href={social.twitter}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaTwitter className="social-icon" size="32" />
-                  </a>
-                )}
-                {social.email && (
-                  <a
-                    className="social-link email"
-                    href={`mailto:${social.email}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaEnvelope className="social-icon" size="32" />
-                  </a>
-                )}
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <About title="About" text={authorDescription} />
-            </Col>
-          </Row>
-          <Separator />
-          <Timeline />
-          <Separator />
-          {githubUsername && <Repositories />}
-          {devtoUsername && <Articles />}
-        </Container>
-      </Wrapper>
-    </Layout>
+        <Wrapper className={className}>
+          <Container className="page-content" fluid>
+            <Row>
+              <Col xs={4} className="avatar">
+                <img
+                  className="avatar__image"
+                  src={withPrefix(authorAvatar)}
+                  alt="user avatar"
+                />
+                <div className="social">
+                  {social.devto && (
+                    <a
+                      className="social-link devto"
+                      href={social.devto}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaDev className="social-icon" size="32" />
+                    </a>
+                  )}
+                  {social.github && (
+                    <a
+                      className="social-link github"
+                      href={social.github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaGithub className="social-icon" size="32" />
+                    </a>
+                  )}
+                  {social.linkedin && (
+                    <a
+                      className="social-link linkedin"
+                      href={social.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaLinkedin className="social-icon" size="32" />
+                    </a>
+                  )}
+                  {social.twitter && (
+                    <a
+                      className="social-link twitter"
+                      href={social.twitter}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaTwitter className="social-icon" size="32" />
+                    </a>
+                  )}
+                  {social.email && (
+                    <a
+                      className="social-link email"
+                      href={`mailto:${social.email}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaEnvelope className="social-icon" size="32" />
+                    </a>
+                  )}
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <About title="About" text={authorDescription} />
+              </Col>
+            </Row>
+            <Separator />
+            <Timeline />
+            <Separator />
+            {githubUsername && <Repositories />}
+            {devtoUsername && <Articles />}
+          </Container>
+        </Wrapper>
+      </Layout>
+    </>
   )
 }
 

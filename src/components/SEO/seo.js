@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: 'https://media-exp1.licdn.com/dms/image/C5103AQFCxntzkQ8BfA/profile-displayphoto-shrink_200_200/0/1517611845797?e=1638403200&v=beta&t=ibfw05lC4YoHnCMIl-T15zaz7qCyfSkvMR1c7GQCzuw',
+                content: 'src/assets/site-screen.png',
               },
               {
                 name: `twitter:card`,
@@ -56,7 +56,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `twitter:image`,
-                content: 'https://media-exp1.licdn.com/dms/image/C5103AQFCxntzkQ8BfA/profile-displayphoto-shrink_200_200/0/1517611845797?e=1638403200&v=beta&t=ibfw05lC4YoHnCMIl-T15zaz7qCyfSkvMR1c7GQCzuw',
+                content: 'src/assets/site-screen.png',
               },
             ]
               .concat(
