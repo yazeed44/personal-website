@@ -1,43 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
-import {
-  FaDev,
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaTwitter,
-} from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa'
 import siteConfig from '../../data/siteConfig'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
 
-import Hero from '../components/hero'
 import SEO from '../components/SEO'
 import Wrapper from '../components/wrapper'
 import About from '../components/about'
-import Timeline from '../components/timeline'
 import Repositories from '../components/repositories'
 import Articles from '../components/articles'
 
 const Layout = loadable(() => import('../components/layout'))
 
-const Separator = styled.hr`
-  margin-top: 24px;
-  margin-bottom: 16px;
-  background-color: ${({ theme }) => theme.colors.fontColor};
-  opacity: 0.2;
+const Separator = styled.div`
+  &:after {
+    content: '...';
+    font-size: 40px;
+    display: block;
+    text-align: center;
+    letter-spacing: 10px;
+    color: ${({ theme }) => theme.colors.fontColor};
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
 `
 
 const Home = ({ className, location }) => {
   const {
     keywords,
     siteTitle,
-    introText,
     authorAvatar,
     social,
-    siteCover,
-    authorDescription,
     githubUsername,
     devtoUsername,
   } = siteConfig
@@ -45,8 +40,6 @@ const Home = ({ className, location }) => {
     <>
       <SEO title={siteTitle} keywords={keywords} />
       <Layout location={location.pathname}>
-        <Hero heroImg={siteCover} title={introText} />
-
         <Wrapper className={className}>
           <Container className="page-content" fluid>
             <Row>
@@ -57,16 +50,6 @@ const Home = ({ className, location }) => {
                   alt="user avatar"
                 />
                 <div className="social">
-                  {social.devto && (
-                    <a
-                      className="social-link devto"
-                      href={social.devto}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaDev className="social-icon" size="32" />
-                    </a>
-                  )}
                   {social.github && (
                     <a
                       className="social-link github"
@@ -74,7 +57,7 @@ const Home = ({ className, location }) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaGithub className="social-icon" size="32" />
+                      <FaGithub className="social-icon" size="26" />
                     </a>
                   )}
                   {social.linkedin && (
@@ -84,7 +67,7 @@ const Home = ({ className, location }) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaLinkedin className="social-icon" size="32" />
+                      <FaLinkedin className="social-icon" size="26" />
                     </a>
                   )}
                   {social.twitter && (
@@ -94,7 +77,7 @@ const Home = ({ className, location }) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaTwitter className="social-icon" size="32" />
+                      <FaTwitter className="social-icon" size="26" />
                     </a>
                   )}
                   {social.email && (
@@ -104,7 +87,7 @@ const Home = ({ className, location }) => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <FaEnvelope className="social-icon" size="32" />
+                      <FaEnvelope className="social-icon" size="26" />
                     </a>
                   )}
                 </div>
@@ -112,14 +95,13 @@ const Home = ({ className, location }) => {
             </Row>
             <Row>
               <Col>
-                <About title="About" text={authorDescription} />
+                <About title="About" />
               </Col>
             </Row>
             <Separator />
-            <Timeline />
+            {devtoUsername && <Articles />}
             <Separator />
             {githubUsername && <Repositories />}
-            {devtoUsername && <Articles />}
           </Container>
         </Wrapper>
       </Layout>
@@ -140,10 +122,10 @@ export default styled(Home)`
   }
 
   .avatar__image {
-    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.5);
     max-width: 200px;
     border-radius: 100px;
-    margin: 0 auto 24px;
+    margin: 0 auto 35px;
   }
 
   .social {
@@ -154,6 +136,7 @@ export default styled(Home)`
   .social-link {
     padding: 8px;
     color: #555;
+    transition: color 75ms ease-in;
   }
 
   a.social-link.twitter:hover {

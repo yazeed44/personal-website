@@ -1,12 +1,12 @@
 import React from 'react'
 import jsonFetch from 'simple-json-fetch'
 import styled from 'styled-components'
-import { GoStar, GoRepoForked, GoLinkExternal } from 'react-icons/go'
+import { FaStar, FaExternalLinkAlt } from 'react-icons/fa'
 import siteConfig from '../../../data/siteConfig'
 
 import Loader from '../loader'
 
-const endpoint = `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&sort=date&per_page=5&page=1`
+const endpoint = `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&sort=updated`
 
 class Repositories extends React.Component {
   constructor(props) {
@@ -19,14 +19,19 @@ class Repositories extends React.Component {
   async componentDidMount() {
     const repos = await jsonFetch(endpoint)
     if (repos.json && repos.json.length) {
-      this.setState({ repos: repos.json, status: 'ready' })
+      // Excluding forked repo and special username repo
+      const filteredRepo = repos.json.filter(
+        ({ fork, name }) => !fork && name !== siteConfig.githubUsername
+      )
+
+      this.setState({ repos: filteredRepo, status: 'ready' })
     }
   }
   render() {
     const { status } = this.state
     return (
       <div className={this.props.className}>
-        <h2>Latest repositories on Github</h2>
+        <h2>My projects</h2>
         {status === 'loading' && (
           <div className="repositories__loader">
             <Loader />
@@ -46,13 +51,13 @@ class Repositories extends React.Component {
                     >
                       <strong>{repo.name}</strong>
                     </a>
-                    <div>{repo.description}</div>
-                    <div className="repositories__repo-date">
-                      Updated: {new Date(repo.updated_at).toUTCString()}
-                    </div>
+                    <p>{repo.description}</p>
                     <div className="repositories__repo-star">
-                      {repo.fork && <GoRepoForked />}
-                      <GoStar /> {repo.stargazers_count}
+                      {repo.stargazers_count > 0 && (
+                        <>
+                          <FaStar /> {repo.stargazers_count}
+                        </>
+                      )}
                     </div>
                   </div>
                   <hr />
@@ -64,9 +69,10 @@ class Repositories extends React.Component {
                 href={`https://github.com/${siteConfig.githubUsername}`}
                 target="_blank"
                 rel="noreferrer"
+                className="ext-link"
               >
-                See all my repositories
-                <GoLinkExternal style={{ marginLeft: 8 }} />
+                <strong>All my repositories</strong>
+                <FaExternalLinkAlt style={{ marginLeft: 8 }} />
               </a>
             </div>
           </React.Fragment>
@@ -88,7 +94,6 @@ export default styled(Repositories)`
 
   .repositories__repo-link,
   .repositories_user-link a {
-    text-decoration: none;
     color: ${({ theme }) => theme.colors.primary};
     display: flex;
     align-items: center;
@@ -116,6 +121,12 @@ export default styled(Repositories)`
 
   .repositories__loader {
     display: flex;
+  }
+
+  .ext-link:hover {
+    svg {
+      color: #005e8f;
+    }
   }
 
   hr {

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { withPrefix } from 'gatsby'
 import loadable from '@loadable/component'
-import Hero from '../components/hero'
 import Wrapper from '../components/wrapper'
 import SEO from '../components/SEO'
 
@@ -27,7 +26,6 @@ const NotFoundPage = ({ location }) => (
   <>
     <SEO title="Page Not Found" />
     <Layout location={location.pathname} noCover={true}>
-      <Hero heroImg={withPrefix('/images/404.jpeg')} title="404" />
       <Wrapper>
         <MainTitle>404 Page Not Found</MainTitle>
         <Icon>

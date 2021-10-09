@@ -43,10 +43,19 @@ export default createGlobalStyle`
   a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 75ms ease-in;
   }
-  a:active,
-  a:hover {
+  a:active {
     outline-width: 0;
+  }
+  a:hover {
+    color: #005e8f;
+
+    p, strong {
+      color: #005e8f;
+    }
   }
   abbr[title] {
     border-bottom: none;
@@ -62,7 +71,7 @@ export default createGlobalStyle`
     font-style: italic;
   }
   h1 {
-    font-size: 2em;
+    font-size: 1em;
     margin: 0.67em 0;
   }
   mark {
@@ -201,8 +210,7 @@ export default createGlobalStyle`
   }
   body {
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Source Sans Pro, Arial, sans-serif;
     text-decoration: none;
     font-weight: normal;
     word-wrap: break-word;
@@ -235,7 +243,7 @@ export default createGlobalStyle`
     color: inherit;
     font-weight: bold;
     text-rendering: optimizeLegibility;
-    font-size: 2.25rem;
+    font-size: 1.8rem;
     line-height: 1.1;
   }
   h2 {
@@ -246,12 +254,13 @@ export default createGlobalStyle`
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: 0.7rem;
     color: inherit;
     font-weight: bold;
     text-rendering: optimizeLegibility;
-    font-size: 1.62671rem;
+    font-size: 1.2rem;
     line-height: 1.1;
+    font-weight: 200;
   }
   h3 {
     margin-left: 0;
@@ -376,6 +385,8 @@ export default createGlobalStyle`
     padding-right: 0;
     padding-top: 0;
     margin-bottom: 1.45rem;
+    font-size: 1.13rem;
+    line-height: 1.7rem;
   }
   figure {
     margin-left: 0;

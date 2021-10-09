@@ -7,6 +7,7 @@ import Header from '../header'
 import Footer from '../footer'
 import { useDarkMode } from './useDarkMode'
 import { animateOnScroll } from '../../utils/isVisible'
+import siteConfig from '../../../data/siteConfig'
 
 const variants = {
   initial: { y: 100, opacity: 0 },
@@ -24,11 +25,13 @@ const Layout = ({ children, location }) => {
     animateOnScroll()
   }, [])
   return (
-    <ThemeProvider theme={themes[theme || 'light']}>
+    <ThemeProvider theme={themes['light']}>
       <ResetCSS />
       <GlobalStyle />
       <StyledContainer>
-        <Header location={location} onChangeTheme={setTheme} theme={theme} />
+        {siteConfig.enableHeader && (
+          <Header location={location} onChangeTheme={setTheme} theme={theme} />
+        )}
         <motion.main
           key={location}
           variants={variants}

@@ -4,4 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+import '@fontsource/source-sans-pro'
+import '@fontsource/source-sans-pro/200.css'
+import '@fontsource/source-sans-pro/600.css'

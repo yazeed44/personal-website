@@ -1,8 +1,7 @@
 import React from 'react'
 import jsonFetch from 'simple-json-fetch'
 import styled from 'styled-components'
-import { GoLinkExternal } from 'react-icons/go'
-import { AiFillLike } from 'react-icons/ai'
+import { FaRegClock, FaRegThumbsUp, FaExternalLinkAlt } from 'react-icons/fa'
 import siteConfig from '../../../data/siteConfig'
 
 import Loader from '../loader'
@@ -19,7 +18,6 @@ class Articles extends React.Component {
   }
   async componentDidMount() {
     const articles = await jsonFetch(endpoint)
-    console.log(articles)
     if (articles.json && articles.json.length) {
       this.setState({ articles: articles.json, status: 'ready' })
     }
@@ -28,7 +26,7 @@ class Articles extends React.Component {
     const { status, articles } = this.state
     return (
       <div className={this.props.className}>
-        <h2>Latest articles on Dev.to</h2>
+        <h2>My latest articles</h2>
         {status === 'loading' && (
           <div className="articles__loader">
             <Loader />
@@ -36,26 +34,24 @@ class Articles extends React.Component {
         )}
         {status === 'ready' && articles && (
           <React.Fragment>
-            {console.log('articles', articles)}
             <div className="articles__content">
               {articles?.map(
                 ({
                   id,
                   canonical_url,
                   title,
-                  description,
-                  published_at,
                   positive_reactions_count,
                   reading_time_minutes,
                 }) => (
                   <React.Fragment key={id}>
                     <div className="articles__item">
                       <div className="articles__item-intro">
-                        <div>
-                          Reading time: {`${reading_time_minutes} minutes`}
+                        <div className="articles__item-time">
+                          <FaRegClock />
+                          <div>{`${reading_time_minutes} min`}</div>
                         </div>
                         <div>
-                          <AiFillLike /> {positive_reactions_count}
+                          <FaRegThumbsUp /> {positive_reactions_count}
                         </div>
                       </div>
                       <a
@@ -64,26 +60,23 @@ class Articles extends React.Component {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <strong>{title}</strong>
+                        <p>{title}</p>
                       </a>
-                      <div>{description}</div>
-                      <div className="articles__item-date">
-                        Updated: {new Date(published_at).toUTCString()}
-                      </div>
+                      <hr />
                     </div>
-                    <hr />
                   </React.Fragment>
                 )
               )}
             </div>
             <div className="articles_user-link">
               <a
+                className="ext-link"
                 href={siteConfig.social.devto}
                 target="_blank"
                 rel="noreferrer"
               >
-                See all my articles
-                <GoLinkExternal style={{ marginLeft: 8 }} />
+                <strong>My blog</strong>
+                <FaExternalLinkAlt style={{ marginLeft: 8 }} />
               </a>
             </div>
           </React.Fragment>
@@ -95,7 +88,6 @@ class Articles extends React.Component {
 
 export default styled(Articles)`
   position: relative;
-  margin-top: 50px;
   .articles__content {
     margin-bottom: 40px;
   }
@@ -106,7 +98,6 @@ export default styled(Articles)`
 
   .articles__item-link,
   .articles_user-link a {
-    text-decoration: none;
     color: ${({ theme }) => theme.colors.primary};
     display: flex;
     align-items: center;
@@ -126,6 +117,17 @@ export default styled(Articles)`
     justify-content: space-between;
     svg {
       margin-right: 4px;
+    }
+
+    .articles__item-time {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .ext-link:hover {
+    svg {
+      color: #005e8f;
     }
   }
 
