@@ -122,10 +122,12 @@ export default styled(Home)`
   }
 
   .avatar__image {
-    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.5);
-    max-width: 200px;
-    border-radius: 100px;
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.15);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     margin: 0 auto 35px;
+    object-fit: cover;
   }
 
   .social {

@@ -14,7 +14,7 @@ module.exports = {
   twitterUsername: 'lucaprevi21',
   githubUsername: 'lucaprevitali',
   devtoUsername: 'the_previ',
-  authorAvatar: '/images/avatar.jpeg',
+  authorAvatar: '/images/avatar_resized.jpg',
   social: {
     devto: 'https://dev.to/the_previ',
     github: 'https://github.com/lucaprevitali',

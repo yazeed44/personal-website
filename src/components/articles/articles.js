@@ -26,7 +26,7 @@ class Articles extends React.Component {
     const { status, articles } = this.state
     return (
       <div className={this.props.className}>
-        <h2>My latest articles</h2>
+        <h2>Articles</h2>
         {status === 'loading' && (
           <div className="articles__loader">
             <Loader />

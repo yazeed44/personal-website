@@ -31,7 +31,7 @@ class Repositories extends React.Component {
     const { status } = this.state
     return (
       <div className={this.props.className}>
-        <h2>My projects</h2>
+        <h2>Projects</h2>
         {status === 'loading' && (
           <div className="repositories__loader">
             <Loader />
