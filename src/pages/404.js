@@ -22,6 +22,15 @@ const Text = styled.p`
   text-align: center;
 `
 
+const TurnHome = styled.div`
+  display: flex;
+  justify-content: center;
+
+  a {
+    color: currentColor;
+  }
+`
+
 const NotFoundPage = ({ location }) => (
   <>
     <SEO title="Page Not Found" />
@@ -35,7 +44,9 @@ const NotFoundPage = ({ location }) => (
           Looks like you've followed a broken link or entered a URL that doesn't
           exist on this site.
         </Text>
-        <a href="/">Turn to homepage</a>
+        <TurnHome>
+          <a href="/">Turn to homepage</a>
+        </TurnHome>
       </Wrapper>
     </Layout>
   </>

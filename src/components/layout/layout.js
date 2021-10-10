@@ -25,7 +25,9 @@ const Layout = ({ children, location }) => {
     animateOnScroll()
   }, [])
   return (
-    <ThemeProvider theme={themes['light']}>
+    <ThemeProvider
+      theme={themes[siteConfig.enableDarkmodetheme ? theme : 'light']}
+    >
       <ResetCSS />
       <GlobalStyle />
       <StyledContainer>
