@@ -18,7 +18,7 @@ const MainTitle = styled.h1`
 const Image = styled.div`
   img {
     width: 90%;
-    height: 600px;
+    height: auto;
   }
 `
 
