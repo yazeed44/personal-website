@@ -1,10 +1,16 @@
 import React from 'react'
-import jsonFetch from 'simple-json-fetch'
 import styled from 'styled-components'
 import { FaRegClock, FaRegThumbsUp, FaExternalLinkAlt } from 'react-icons/fa'
 import siteConfig from '../../../data/siteConfig'
 
 import Loader from '../loader'
+
+async function fetchURL(url) {
+  return fetch(url)
+    .then(res => res.json())
+    .then(data => data)
+    .catch(err => console.log(err))
+}
 
 const endpoint = `https://dev.to/api/articles?username=${siteConfig.devtoUsername}`
 
@@ -17,9 +23,9 @@ class Articles extends React.Component {
     }
   }
   async componentDidMount() {
-    const articles = await jsonFetch(endpoint)
-    if (articles.json && articles.json.length) {
-      this.setState({ articles: articles.json, status: 'ready' })
+    const articles = await fetchURL(endpoint)
+    if (articles && articles.length) {
+      this.setState({ articles, status: 'ready' })
     }
   }
   render() {
