@@ -6,7 +6,7 @@ import siteConfig from '../../../data/siteConfig'
 
 import Loader from '../loader'
 
-const endpoint = `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&sort=updated`
+const endpoint = `https://api.github.com/users/${siteConfig.githubUsername}/repos?type=owner&per_page=100`
 
 class Repositories extends React.Component {
   constructor(props) {
@@ -21,8 +21,12 @@ class Repositories extends React.Component {
     if (repos.json && repos.json.length) {
       // Excluding forked repo and special username repo
       const filteredRepo = repos.json.filter(
-        ({ fork, name }) => !fork && name !== siteConfig.githubUsername
+        ({ fork, name }) =>
+          name !== siteConfig.githubUsername &&
+          siteConfig.githubReposToShow.includes(name)
       )
+      if (filteredRepo.length !== siteConfig.githubReposToShow.length)
+        throw new Error(`Loaded Repos are missing a few from github`)
 
       this.setState({ repos: filteredRepo, status: 'ready' })
     }
@@ -31,7 +35,7 @@ class Repositories extends React.Component {
     const { status } = this.state
     return (
       <div className={this.props.className}>
-        <h2>Projects</h2>
+        <h2>Github Projects</h2>
         {status === 'loading' && (
           <div className="repositories__loader">
             <Loader />

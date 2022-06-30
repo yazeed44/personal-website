@@ -98,7 +98,6 @@ const Home = ({ className, location }) => {
                 <About title="About" />
               </Col>
             </Row>
-            <Separator />
             {devtoUsername && <Articles />}
             <Separator />
             {githubUsername && <Repositories />}

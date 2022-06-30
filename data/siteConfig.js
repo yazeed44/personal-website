@@ -44,4 +44,15 @@ module.exports = {
       url: '/portfolio',
     },
   ],
+  githubReposToShow: [
+    'decentralized-housing-market',
+    'FlightSurety',
+    'personal-website',
+    'Star-Notary---Ethereum',
+    'reform-api',
+    'gjf',
+    'social-media-detector-api',
+    'pptxer',
+    'YazeedBot-Telegram',
+  ],
 }
