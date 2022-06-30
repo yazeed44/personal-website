@@ -10,7 +10,6 @@ import SEO from '../components/SEO'
 import Wrapper from '../components/wrapper'
 import About from '../components/about'
 import Repositories from '../components/repositories'
-import Articles from '../components/articles'
 
 const Layout = loadable(() => import('../components/layout'))
 
@@ -34,7 +33,6 @@ const Home = ({ className, location }) => {
     authorAvatar,
     social,
     githubUsername,
-    devtoUsername,
   } = siteConfig
   return (
     <>
@@ -98,7 +96,6 @@ const Home = ({ className, location }) => {
                 <About title="About" />
               </Col>
             </Row>
-            {devtoUsername && <Articles />}
             <Separator />
             {githubUsername && <Repositories />}
           </Container>
