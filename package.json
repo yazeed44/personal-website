@@ -1,9 +1,9 @@
 {
-  "name": "luca-previtali-dev",
+  "name": "personal-website",
   "private": false,
   "description": "My simple website made in Gatsby forked from gatsby-starter-cv",
   "version": "1.0.0",
-  "author": "Luca Previtali",
+  "author": "Yazeed Almuqwishi",
   "dependencies": {
     "@fontsource/source-sans-pro": "^4.5.0",
     "@loadable/component": "5.12.0",
