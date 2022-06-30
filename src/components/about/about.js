@@ -12,9 +12,10 @@ export default ({ title = 'about', text = '' }) => {
     <IntroText>
       <h2>{title}</h2>
       <p>
-        I'm a Blockchain and Backend developer focused on JavaScript, Python and
-        Solidity. I build APIs in Node.js that interacts with smart contracts
-        using ethers.js and decentralized storage such as IPFS.{' '}
+        Hi there! I'm Yazeed, a Blockchain and Backend developer focused on
+        JavaScript, Python and Solidity. I build APIs in Node.js that interacts
+        with smart contracts using ethers.js and decentralized storage such as
+        IPFS.{' '}
       </p>
     </IntroText>
   )

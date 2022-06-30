@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import siteConfig from '../../../data/siteConfig'
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
@@ -36,7 +37,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: 'https://lucaprevitali.dev/og-image/index.png',
+                content: siteConfig.authorAvatar,
               },
               {
                 name: `twitter:card`,
@@ -56,7 +57,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `twitter:image`,
-                content: 'https://lucaprevitali.dev/og-image/index.png',
+                content: siteConfig.authorAvatar,
               },
             ]
               .concat(
