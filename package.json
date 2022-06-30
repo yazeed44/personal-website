@@ -1,6 +1,6 @@
 {
   "name": "personal-website",
-  "private": false,
+  "private": true,
   "description": "My simple website made in Gatsby forked from gatsby-starter-cv",
   "version": "1.0.0",
   "author": "Yazeed Almuqwishi",
