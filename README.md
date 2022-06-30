@@ -1,3 +1,2 @@
-# luca-previtali-dev
 
-My simple website made in Gatsby start from a fork by gatsby-starter-cv [https://github.com/santosfrancisco/gatsby-starter-cv]
+My minimalistic portoflio website, hosted on IPFS. You can access it through [https://0xYazeed.eth.limo](https://0xYazeed.eth.limo)
