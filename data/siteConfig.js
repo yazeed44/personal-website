@@ -24,7 +24,7 @@ module.exports = {
     email: 'yazeed.almuqwishi@gmail.com',
   },
   siteUrl: 'https://0xYazeed.eth.limo',
-  pathPrefix: '/personal-website',
+  pathPrefix: '',
   siteCover: '/images/pexels-sergei-starostin-6636474.jpg',
   background_color: '#ffffff',
   background_light: '#fdfdfd',
