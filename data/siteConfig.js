@@ -34,6 +34,7 @@ module.exports = {
     },
   ],
   githubReposToShow: [
+    'Nas',
     'decentralized-housing-market',
     'FlightSurety',
     'personal-website',
